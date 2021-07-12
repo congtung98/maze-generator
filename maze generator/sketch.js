@@ -7,7 +7,7 @@ var current;
 var stack = [];
 
 function setup() {
-    createCanvas(800,800);
+    createCanvas(600, 600);
     cols = floor(width/w);
     rows = floor(height/w);
     frameRate(30);
