@@ -6,6 +6,7 @@ let yoff = 10000;
 
 const sceneW = 400;
 const sceneH = 400;
+let sliderFOV;
 
 function setup() {
     createCanvas(800,400);
@@ -24,6 +25,13 @@ function setup() {
     walls.push(new Boundary(0, sceneH, 0, 0));
     // wall = new Boundary(300, 100, 300, 300);
     particle = new Particle();
+    sliderFOV = createSlider(0, 360, 45);
+    sliderFOV.input(changeFOV);
+}
+
+function changeFOV() {
+    const fov = sliderFOV.value();
+    particle.updateFOV(fov);
 }
 
 
@@ -45,7 +53,7 @@ function draw() {
         wall.show();
     }
     // particle.update(noise(xoff) * sceneW, noise(yoff) * sceneH);
-    particle.update(mouseX, mouseY);
+    // particle.update(mouseX, mouseY);
 
     // xoff += 0.01;
     // yoff += 0.01;
