@@ -1,6 +1,7 @@
 function Ship() {
     this.x = width/2;
     this.y = height - 25;
+    this.r = 30;
 
     this.show = function() {
         // translate(this.x, this.y);
@@ -14,5 +15,6 @@ function Ship() {
 
     this.move = function(dir) {
         this.x += dir*5;
+        this.x = constrain(this.x, 10, width - 10);
     }
 }

@@ -15,9 +15,14 @@ function Enemy(x, y) {
         this.y += this.r;
     }
 
-    // this.shoot = function() {
-
-    // }
+    this.hits = function(enemy) {
+        let d = dist(this.x, this.y, enemy.x, enemy.y);
+        if (d < this.r + enemy.r) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     this.show = function() {
         noStroke();
